@@ -24,8 +24,8 @@ This repo has the following dependencies
 2. Generate your Angular project
 
 ```
-  ng new angular-cli-esri
-  cd angular-cli-esri
+  ng new angular-cli-esri-app
+  cd angular-cli-esri-app
   ng serve
 ```
 
@@ -40,7 +40,7 @@ This repo has the following dependencies
   npm install --save @types/arcgis-js-api
 ```
 
-[`esri-loader`](https://github.com/Esri/esri-loader#usage), a low level service needed to load and use ArcGIS modules (v3.x or v4.x) in non-Dojo applications.
+[`esri-loader`](https://github.com/Esri/esri-loader#usage) is a low level service needed to load and use ArcGIS modules (v3.x or v4.x) in non-Dojo applications.
 
 And, the ArcGIS JavaScript TypeScript type definitions can be found [here](https://github.com/Esri/jsapi-resources/tree/master/4.x/typescript).
 
@@ -54,7 +54,7 @@ And, the ArcGIS JavaScript TypeScript type definitions can be found [here](https
 
 2. Add  `"types": ["arcgis-js-api"]` to `tsconfig.spec.json`
 
-3. Copy the contents of this repo into the `angular-esri-cli/src/app/esri-map` directory
+3. Copy the contents of this repo into the `angular-esri-cli-app/src/app/esri-map` directory
 
 4. Add the following code to the bottom of the `app.component.html` file
 
