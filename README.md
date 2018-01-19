@@ -7,7 +7,6 @@ This tutorial shows you how to integrate the [ArcGIS API for JavaScript](https:/
 
 ```
   git clone https://github.com/andygup/angular-cli-esri.git
-
 ```
 
 ## Install Angular CLI
@@ -17,11 +16,9 @@ This tutorial shows you how to integrate the [ArcGIS API for JavaScript](https:/
 2. Generate your Angular project
 
 ```
-
   ng new angular-cli-esri
   cd angular-cli-esri
   ng serve
-
 ```
 
   Navigate to http://localhost:4200/ and the basic app should run just fine. The app will automatically reload if you change any of the source files.
@@ -31,18 +28,16 @@ This tutorial shows you how to integrate the [ArcGIS API for JavaScript](https:/
 ## Install `esri-loader` and the Esri TypeScript types
 
 ```
-
   npm install --save esri-loader
   npm install --save @types/arcgis-js-api
-
 ```
+
+[`esri-loader`](https://github.com/Esri/esri-loader#usage), a low level service needed to load and use ArcGIS modules (v3.x or v4.x) in non-Dojo applications.
 
 ## Generate the scaffolding for your mapping component
 
 ```
-
   ng generate component esri-map
-
 ```
 
 1. Add `"types": ["arcgis-js-api"]` to `tsconfig.app.json`
@@ -54,9 +49,7 @@ This tutorial shows you how to integrate the [ArcGIS API for JavaScript](https:/
 4. Add the following code to the bottom of the `app.component.html` file
 
 ```
-
   <app-esri-map></app-esri-map>
-
 ```
 
 ## Make sure the mapping app runs
@@ -65,7 +58,6 @@ Now run the following command and you should see the map appear at the bottom of
 
 ```
   ng serve
-
 ```
 
 ## Finish writing the test spec
@@ -103,16 +95,12 @@ In `app.component.spec.ts` import `EsriMapComponent` and add it to the declarati
       expect(compiled.querySelector('h1').textContent).toContain('Welcome to app!');
     }));
   });
-
-
 ```
 
 Now lets see if the test spec passes
 
 ```
-
   ng test
-
 ```
 
 # Contributing
