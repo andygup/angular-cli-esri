@@ -3,6 +3,14 @@
 This tutorial shows you how to integrate the [ArcGIS API for JavaScript](https://developers.arcgis.com/javascript), which is an enterprise geospatial API, using [Angular CLI](https://github.com/angular/angular-cli).
 
 
+## Dependencies
+
+This repo has the following dependencies
+* [Angular CLI](https://github.com/angular/angular-cli)
+* [`esri-loader`](https://github.com/Esri/esri-loader)
+* [`arcgis-js-api.d.ts`](https://github.com/Esri/jsapi-resources/tree/master/4.x/typescript) Esri TypeScript type definitions
+* [ArcGIS API for JavaScript](https://developers.arcgis.com/javascript/)
+
 ## Clone or download this repo
 
 ```
@@ -33,6 +41,8 @@ This tutorial shows you how to integrate the [ArcGIS API for JavaScript](https:/
 ```
 
 [`esri-loader`](https://github.com/Esri/esri-loader#usage), a low level service needed to load and use ArcGIS modules (v3.x or v4.x) in non-Dojo applications.
+
+And, the ArcGIS JavaScript TypeScript type definitions can be found [here](https://github.com/Esri/jsapi-resources/tree/master/4.x/typescript).
 
 ## Generate the scaffolding for your mapping component
 
