@@ -1,6 +1,6 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-
+import {Component, OnInit, ViewChild, ElementRef, Input, Output, EventEmitter} from '@angular/core';
 import { loadModules } from 'esri-loader';
+import esri = __esri;
 
 @Component({
   selector: 'app-esri-map',
@@ -8,10 +8,41 @@ import { loadModules } from 'esri-loader';
   styleUrls: ['./esri-map.component.css']
 })
 
-
 export class EsriMapComponent implements OnInit {
 
-  public mapView: __esri.MapView;
+  // Private vars with default values
+  private _zoom = 10;
+  private _center = [0.1278, 51.5074];
+  private _basemap = 'streets';
+
+  @Input()
+  set zoom(zoom: number) {
+    this._zoom = zoom;
+  }
+
+  get zoom(): number {
+    return this._zoom;
+  }
+
+  @Input()
+  set center(center: any[]) {
+    this._center = center;
+  }
+
+  get center(): any[] {
+    return this._center;
+  }
+
+  @Input()
+  set basemap(basemap: string) {
+    this._basemap = basemap;
+  }
+
+  get basemap(): string {
+    return this._basemap;
+  }
+
+  @Output() mapLoaded = new EventEmitter<boolean>();
 
   // this is needed to be able to create the MapView at the DOM element in this component
   @ViewChild('mapViewNode') private mapViewEl: ElementRef;
@@ -20,24 +51,35 @@ export class EsriMapComponent implements OnInit {
 
   public ngOnInit() {
 
-    return loadModules([
+    loadModules([
       'esri/Map',
       'esri/views/MapView'
-    ]).then(([Map, MapView]) => {
+    ]).then(([EsriMap, EsriMapView]) => {
 
-      const map: __esri.Map = new Map({
-        basemap: 'hybrid'
+      const map: esri.Map = new EsriMap({
+        basemap: this._basemap
       });
 
-      this.mapView = new MapView({
+      let mapView: esri.MapView = new EsriMapView({
         container: this.mapViewEl.nativeElement,
-        center: [-12.287, -37.114],
-        zoom: 12,
+        center: this._center,
+        zoom: this._zoom,
         map: map
+      });
+
+      mapView.when( () => {
+        // All the resources in the MapView and the map have loaded. Now execute additional processes
+        this.mapLoaded.emit(true);
+      }, err => {
+        console.error(err);
+      });
+
+      mapView.watch('zoom', (z) => {
+        console.log('zoom ' + z);
       });
     })
     .catch(err => {
-      console.log(err);
+      console.error(err);
     });
   } // ngOnInit
 
