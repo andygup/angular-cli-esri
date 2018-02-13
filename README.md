@@ -5,7 +5,7 @@ This tutorial shows you how to integrate the [ArcGIS API for JavaScript](https:/
 
 ## Dependencies
 
-This repo has the following dependencies
+This repo has the following dependencies:
 * [Angular CLI](https://github.com/angular/angular-cli)
 * [ArcGIS API for JavaScript](https://developers.arcgis.com/javascript/)
 * [`esri-loader`](https://github.com/Esri/esri-loader)
@@ -25,7 +25,7 @@ Here are the steps for creating a sample Hello World mapping application.
 
 Make sure you have Angular CLI installed. See the instructions here: https://github.com/angular/angular-cli
 
-* Now, let's generate your Angular project
+* Now, let's generate your Angular project.
 
 ```
   ng new esri-app
@@ -61,9 +61,9 @@ And, the ArcGIS JavaScript TypeScript type definitions can be found [here](https
 ```
 
 
-* Copy the contents of this repo into the `angular-esri-cli-app/src/app/esri-map` directory
+* Copy the contents of this repo into the `angular-esri-cli-app/src/app/esri-map` directory.
 
-* Add the following code to the bottom of the `app.component.html` file
+* Add the following code to the bottom of the `app.component.html` file.
 
 ```
   <app-esri-map></app-esri-map>
@@ -76,17 +76,17 @@ And, the ArcGIS JavaScript TypeScript type definitions can be found [here](https
 
 #### Make sure the mapping app runs
 
-Now run the following command and you should see our mapping appear on the page
+Now run the following command and you should see our mapping appear on the page.
 
 ```
   ng serve
 ```
 
-If you see the mapping app and it runs without errors go ahead and shutdown `ng serve` with a `Control C`
+If you see the mapping app and it runs without errors go ahead and shutdown `ng serve` with a `Control C`.
 
 #### Build our spec and run it to make sure everything is good
 
-Copy `app.component.spec.ts` into the `/app` directory
+Copy `app.component.spec.ts` into the `/app` directory.
 
 ```
   import { TestBed, async } from '@angular/core/testing';
@@ -121,7 +121,7 @@ Copy `app.component.spec.ts` into the `/app` directory
   });
 ```
 
-Now lets see if the test spec passes
+Now lets see if the test spec passes.
 
 ```
   ng test
